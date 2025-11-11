@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package notes;
+
+// The Note service definition.
+service NoteService {
+  rpc CreateNote (CreateNoteRequest) returns (CreateNoteResponse);
+  // 1. THIS LINE IS CHANGED
+  rpc GetNote (GetNoteRequest) returns (GetNoteResponse);
+  rpc DeleteNote (DeleteNoteRequest) returns (DeleteNoteResponse);
+  rpc ListNotes (ListNotesRequest) returns (ListNotesResponse);
+}
+
+// The Note message structure
+message Note {
+  string id = 1;
+  string title = 2;
+  string content = 3;
+}
+
+// Request message for CreateNote
+message CreateNoteRequest {
+  string title = 1;
+  string content = 2;
+}
+
+// Response message for CreateNote
+message CreateNoteResponse {
+  string id = 1;
+}
+
+message GetNoteRequest {
+  string id = 1;
+}
+
+// 2. ADD THIS NEW MESSAGE
+message GetNoteResponse {
+  Note note = 1;
+}
+
+// Request message for DeleteNote
+message DeleteNoteRequest {
+  string id = 1;
+}
+
+// Response message for DeleteNote
+message DeleteNoteResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+// Request message for ListNotes (empty)
+message ListNotesRequest {}
+
+// Response message for ListNotes
+message ListNotesResponse {
+  repeated Note notes = 1;
+}

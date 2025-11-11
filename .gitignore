@@ -1,0 +1,19 @@
+# Python virtual environment
+.venv/
+venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# IDE files (PyCharm / VSCode)
+.idea/
+.vscode/
+
+# Database Files
+data/
+*.db
+
+# Generated gRPC files
+notes_pb2.py
+notes_pb2_grpc.py

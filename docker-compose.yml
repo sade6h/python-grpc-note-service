@@ -1,0 +1,13 @@
+# 'version' is removed to avoid warnings
+services:
+  grpc-server:
+    build: .
+    ports:
+      - "50051:50051"
+    volumes:
+      # Mount the 'data' directory to persist the database
+      - ./data:/app/data
+    
+    # Add this to see print() statements immediately
+    environment:
+      - PYTHON UNBUFFERED=1
