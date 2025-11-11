@@ -17,3 +17,7 @@ data/
 # Generated gRPC files
 notes_pb2.py
 notes_pb2_grpc.py
+
+# Pytest cache
+.pytest_cache/
+test_notes.db
