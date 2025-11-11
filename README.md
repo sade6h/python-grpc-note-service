@@ -209,3 +209,32 @@ message ListNotesResponse {
   repeated Note notes = 1;
 }
 ```
+---
+
+## 🧪 How to Run Tests
+
+This project includes a full unit test suite using `pytest`.
+
+**Prerequisites:**
+* You must have the **Local Setup** (Python 3.8+) configured.
+* Your virtual environment (`venv`) must be activated.
+
+**Steps:**
+
+1.  **Install All Dependencies (including test dependencies):**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+2.  **Generate gRPC Code:** (If not already done)
+    ```bash
+    python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. notes.proto
+    ```
+
+3.  **Run Tests:**
+    Run `pytest` from the project's **root directory**:
+    ```bash
+    pytest -v
+    ```
+
+You should see a green output indicating that all `6 passed`!
